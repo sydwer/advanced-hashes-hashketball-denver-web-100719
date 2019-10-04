@@ -110,7 +110,7 @@ def num_points_scored(背が高い人) # v tol
   end
 end
 
-def shoe_size(b_baller)
+def shoe_size(b_baller) #it doesn't like Arabic script 'cus right to left?? look up why'
   game_hash.each do |homeaway, mannschaft |
     mannschaft .each do |trait, stats|
       if trait == :players
