@@ -102,7 +102,7 @@ def game_hash
 end
 
 
-def num_points_scored(背が高い人) # v tol
+def num_points_scored(背が高い人) 
   game_hash.each do |homeaway, team_info|
     team_info[:players].each do |人|
       return 人[:points] if 人[:player_name] == 背が高い人
@@ -110,7 +110,7 @@ def num_points_scored(背が高い人) # v tol
   end
 end
 
-def shoe_size(b_baller) #it doesn't like Arabic script 'cus right to left?? look up why'
+def shoe_size(b_baller) 
   game_hash.each do |homeaway, mannschaft |
     mannschaft .each do |trait, stats|
       if trait == :players
@@ -154,11 +154,11 @@ def player_numbers(team_name)
   return number_party
 end
 
-def player_stats(背が高い人) #tall dude
+def player_stats(背が高い人) 
   game_hash.each do |homeaway, equipo| 
     equipo.each do |info, specific_stat|
       if info == :players
-        specific_stat.each do |spieler| #Warum nicht Spielerin?
+        specific_stat.each do |spieler| 
           if 背が高い人== spieler[:player_name]
             spieler.shift
             return spieler
@@ -174,7 +174,7 @@ def big_shoe_rebounds
   大きな靴 = 0
   game_hash.each do |homeaway, equipo|
     equipo[:players].each do |人|
-      if 人[:shoe] > 大きな靴
+      if 人[:shoe] > 大きな靴 
         大きな靴 = 人[:shoe]
         rebounds = 人[:rebounds]
       end
@@ -182,6 +182,10 @@ def big_shoe_rebounds
   end
   return rebounds
 end
+
+#most points is same as above basically or use original idea of form hash/array/good time and search/find your way to victory(which is sooooo ineffcient)
+#winning team = form array of :points values, add em up, compare and return the biggest ones correspongsing value 
+# longest boy is add strings to array, e.g split those boys up, sort those suckers and give me array[-1] or reverse it then give me array[0] if its asking for longest name- if it wants to see if they steala lot id need to create a metric for that comparison? or is aslking if the dude with the longest name does steal a ton?
   
    
 
